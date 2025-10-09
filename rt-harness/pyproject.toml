@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rt-harness"
+version = "0.1.0"
+description = "Red-team harness CLI to execute LLM attack seeds and emit SARIF/JSON"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31.0",
+  "PyYAML>=6.0.1"
+]
+
+[project.scripts]
+rt-harness = "rt_harness.cli:main"
+
+[tool.setuptools]
+packages = ["rt_harness"]

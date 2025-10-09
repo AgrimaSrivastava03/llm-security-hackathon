@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: rt-harness
+Version: 0.1.0
+Summary: Red-team harness CLI to execute LLM attack seeds and emit SARIF/JSON
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.31.0
+Requires-Dist: PyYAML>=6.0.1
+
+# rt-harness
+
+A lightweight red-team harness CLI to execute LLM attack seeds against a target endpoint and emit SARIF/JSON for CI consumption.

@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-1: #0b1220;
+  --bg-2: #0f172a;
+  --primary: #60a5fa; /* blue-400 */
+  --accent: #22d3ee;  /* cyan-400 */
+  --muted: #94a3b8;   /* slate-400 */
+}
+
+html, body, #root { height: 100%; }
+body {
+  color: #e5e7eb;
+  background: radial-gradient(1200px 600px at -10% -20%, rgba(34,211,238,0.10), transparent 60%),
+              radial-gradient(1000px 500px at 110% 10%, rgba(96,165,250,0.08), transparent 60%),
+              linear-gradient(180deg, var(--bg-1), var(--bg-2));
+}
+
+.app-bg {
+  background: radial-gradient(1200px 600px at -10% -20%, rgba(34,211,238,0.10), transparent 60%),
+              radial-gradient(1000px 500px at 110% 10%, rgba(96,165,250,0.08), transparent 60%),
+              linear-gradient(180deg, var(--bg-1), var(--bg-2));
+}
+
+/*************************
+ Glass + Card Utilities
+*************************/
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+.glass-hover:hover {
+  border-color: rgba(255,255,255,0.22);
+}
+
+.card-border {
+  position: relative;
+}
+.card-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(96,165,250,0.35), rgba(34,211,238,0.35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/*************************
+ Typography accents
+*************************/
+.text-muted { color: var(--muted); }
+.text-accent { color: var(--accent); }
+.text-primary { color: var(--primary); }
+
+/*************************
+ Tables
+*************************/
+.table-base th { @apply text-left px-3 py-2 text-sm text-slate-300; }
+.table-base td { @apply px-3 py-2 text-sm text-slate-200; }
+.table-base thead { background: rgba(255,255,255,0.04); }
+.table-base tbody tr { border-top: 1px solid rgba(255,255,255,0.08); }
+
+/*************************
+ Form Elements - Remove Default Outlines
+*************************/
+input, select, button, textarea {
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Remove focus outlines completely */
+input:focus, select:focus, button:focus, textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom focus styles for better UX */
+input:focus, select:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove default select styling */
+select {
+  background-image: none !important;
+}
+
+/* Ensure no white outlines on any elements */
+* {
+  outline: none !important;
+}
+
+*:focus {
+  outline: none !important;
+}

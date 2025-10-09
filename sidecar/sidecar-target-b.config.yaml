@@ -1,0 +1,12 @@
+server:
+  port: 8081
+upstream:
+  url: http://localhost:9001  # Target B: Azure OpenAI
+  allowlistPaths:
+    - /query
+policies:
+  path: ./sidecar/policies
+rateLimits:
+  perIpPerMinute: 60
+redaction:
+  pii: true

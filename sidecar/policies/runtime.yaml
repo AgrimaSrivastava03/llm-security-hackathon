@@ -1,0 +1,14 @@
+version: 1
+policies:
+  - id: deny-prompt-injection
+    description: Deny obvious prompt injection phrases
+    phase: [runtime]
+    match:
+      contains: ["ignore all prior instructions", "reveal the system prompt"]
+    action: deny
+  - id: redact-pii
+    description: Redact common PII patterns
+    phase: [runtime]
+    match:
+      detectors: [pii]
+    action: redact

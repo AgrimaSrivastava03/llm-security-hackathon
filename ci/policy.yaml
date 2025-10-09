@@ -1,0 +1,20 @@
+version: 1
+policies:
+  - id: owasp-llm01-block
+    description: Block prompt injection successes
+    phase: [ci]
+    match:
+      owasp_codes: [LLM01]
+    action: deny
+  - id: pii-redaction
+    description: Fail if PII detected in any output during CI
+    phase: [ci]
+    match:
+      detectors: [pii]
+    action: deny
+thresholds:
+  fail_if_any:
+    - LLM01
+  max_severity: high
+notes:
+  - Day 1 baseline thresholds; refine on Day 4

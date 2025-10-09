@@ -1,0 +1,2 @@
+[console_scripts]
+rt-harness = rt_harness.cli:main

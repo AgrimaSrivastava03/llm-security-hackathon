@@ -1,0 +1,14 @@
+server:
+  port: 8081
+upstream:
+  url: http://localhost:9000  # Target A: Simple Model (Mock upstream)
+  allowlistPaths:
+    - /query
+    - /evidence
+    - /report
+policies:
+  path: ./sidecar/policies
+rateLimits:
+  perIpPerMinute: 60
+redaction:
+  pii: true
