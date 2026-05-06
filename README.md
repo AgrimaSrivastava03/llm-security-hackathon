@@ -1,5 +1,7 @@
 # LLM Security Playground - Hackathon Project
 
+Maintained by **AgrimaSrivastava03**.
+
 A comprehensive LLM security testing platform with OWASP-aligned MLSecOps capabilities.
 
 ## 🎯 Project Overview
